@@ -42,6 +42,18 @@ Design includes as a back-end that could be run in a datacenter.  Optionally, th
 * Feature: Show job
   * Add view that receives a job query and returns URLs and screenshots
 
+## Thoughts, Questions, Ideas, and Research
+Given my current experience and skills, I will be proceeding with Ruby and Rails.  Various ideas about technologies new to me, and development flow decisions, are listed below.
+
+**Screenshot**<br>
+An [article](https://redpanthers.co/screenshots-using-ruby/) from two years ago says that there are two Ruby gems based on `PhantomJS` called `Screencap`-[Github](https://github.com/maxwell/screencap) and `Webshot`-[Github](https://github.com/vitalie/webshot) that perform the basic functionality needed for the Screenshot Controller feature.  `Webshot` seems to be the more recent of the two and can configure the size of the captured screenshot.  `Grabzit`-[Ruby Gems](https://rubygems.org/gems/grabzit) is another option for Rails and has an attached client.  It might be more bulky than necessary for this particular app.  There doesn't seem to be much progress on these types of APIs after 2016 which makes me think that progress in this technology has been taken into the private domain.
+
+**Parser**<br>
+May or may not need gems.  Need to experiment.
+
+**Message Queues**<br>
+[Sidekiq?](https://sidekiq.org/products/pro.html)
+
 
 
 
