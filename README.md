@@ -30,7 +30,8 @@ The design requirements include a back-end that could be run in a datacenter.  O
   In order to submit a screen shot request,
   I want a to specify request name to identify the request, and URLs to specify the needed screenshots."
   ```
-    * Add Jobs controller.
+    * Generate Jobs controller.
+    * Add 'index' view with Submit Request form containing a Name field and URL field.
     * Add Job model: request name (string), URLs (string array).  Unit test.
     * Add 'create' method to create and store a job with associated URLs.  URLs are processed from an input string to a string array.
 * Feature:<br>
@@ -48,7 +49,7 @@ The design requirements include a back-end that could be run in a datacenter.  O
   In order to see the result of a past request,
   I want the screen shots generated as images and stored in the database along with the job name and URLs for later recall."
   ```
-    * Add 'index' view in Jobs controller with a Find Job form.
+    * Add Find Job form to 'index' view.
     * Add 'show' method to show URLs and images and/or image file names from a given Job.
 
 **Additional Features Back End**
