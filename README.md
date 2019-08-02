@@ -37,12 +37,12 @@ The design requirements include a back-end that could be run in a datacenter.  O
 * Feature:<br>
   ```
   "As a user,
-  In order to have the requested screen shots processed,
-  I want the screen shots generated as images and stored in the database along with the request name and URLs for later recall."
+  In order to have the requested screenshots processed,
+  I want the screenshots generated as images and stored in the database along with the request name and URLs for later recall."
   ```
-    * Add new data association to Screenshotreq model for generated images (bytea), generate migration for new DB column.
     * Add screenshot gem of choice.
     * Add screenshot gem function to 'create' method to generate and store images from URL string array.
+    * Add new data association to Screenshotreq model for generated images (bytea), unit test, generate migration for new DB column.
 * Feature:<br>
   ```
   "As a user,
