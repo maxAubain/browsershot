@@ -21,6 +21,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
