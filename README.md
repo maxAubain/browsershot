@@ -18,3 +18,22 @@ Design includes as a back-end that could be run in a datacenter.  Optionally, th
    2. Option: How long should the requested data remain (persistence)?
 6. Technology: Any languages, frameworks, APIs, or databases.
 
+## Development Flow and Build
+**Minimum Viable Product (MVP)**<br>
+* Feature: Screenshot controller
+  * Implement screen capture with a given URL and verify image output.
+    * Add parser to receive a list of URLs.
+    * Add text file import to receive URLs from file.
+* Feature: Dataflow controller, Job model
+  * Implement control of data generated for and received from Screenshot, then store all data in database.
+    * Add text file generator generated from a string of delimited URLs.
+    * Add Job model(s) and database which sets database migration to hold arrays of images, arrays of URLs, and a job ID.
+      * Maybe needs multiple linked models.  Job has many URLs / Job has many images / URL has one image?
+  * Implement management of database queries (Jobs) to retrieve the screenshot(s) from a past job.
+    * Add method to "show" URLs and images from a given Job.
+
+
+
+
+
+
