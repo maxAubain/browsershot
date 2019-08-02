@@ -19,6 +19,15 @@ The design requirements include a back-end that could be run in a datacenter.  O
 6. Technology: Any languages, frameworks, APIs, or databases.
 
 ## Development Flow and Build
+**Required Apps**
+Ruby v(xx)
+Rails v(xx)
+Phantomjs
+  `$ brew tap homebrew/cask`
+  `$ brew cask install phantomjs`
+GraphicsMagick
+  `brew install graphicsmagick`
+
 **Minimum Viable Product (MVP)**<br>
 * Scaffolding: Ruby on Rails
   * PosgreSQL database
