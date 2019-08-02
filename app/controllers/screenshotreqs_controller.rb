@@ -7,8 +7,13 @@ class ScreenshotreqsController < ApplicationController
     @screenshotreq = Screenshotreq.new(screenshotreq_params)
     
     if @screenshotreq.save
-      redirect_to root_path
+      # parse URLs
       parse_urls(@screenshotreq)
+      
+      # capture and save screenshots
+      get_screenshots(@screenshotreq.urls)
+
+      redirect_to root_path
       flash[:notice] = 'Your request has been submitted.'
     end
   end
@@ -22,5 +27,9 @@ class ScreenshotreqsController < ApplicationController
   def parse_urls(screenshotreq)
     @screenshotreq.urls = screenshotreq.urls.gsub(/\s+/, "").split(";")
     @screenshotreq.save
+  end
+
+  def get_screenshots(urls)
+
   end
 end
