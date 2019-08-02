@@ -11,7 +11,7 @@ class ScreenshotreqsController < ApplicationController
       parse_urls(@screenshotreq)
       
       # capture and save screenshots
-      get_screenshots(@screenshotreq.urls)
+      get_screenshots(@screenshotreq)
 
       redirect_to root_path
       flash[:notice] = 'Your request has been submitted.'
@@ -29,7 +29,9 @@ class ScreenshotreqsController < ApplicationController
     @screenshotreq.save
   end
 
-  def get_screenshots(urls)
-
+  def get_screenshots(screenshotreq)
+    ws = Webshot::Screenshot.instance
+    ws.capture "http://www.google.com/", "google.png"
+    binding.pry
   end
 end
