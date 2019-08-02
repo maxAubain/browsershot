@@ -32,6 +32,15 @@ Design includes as a back-end that could be run in a datacenter.  Optionally, th
   * Implement management of database queries (Jobs) to retrieve the screenshot(s) from a past job.
     * Add method to "show" URLs and images from a given Job.
 
+**Additional Features Back End**
+* Feature: Message Queues
+  * Need to research about message queue implementation.
+
+**Additional Features Front End**
+* Feature: Input URLs
+  * Add view with form that receives a string of delimited URLs
+* Feature: Show job
+  * Add view that receives a job query and returns URLs and screenshots
 
 
 
