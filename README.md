@@ -30,27 +30,27 @@ The design requirements include a back-end that could be run in a datacenter.  O
   In order to submit a screen shot request,
   I want a to specify request name to identify the request, and URLs to specify the needed screenshots."
   ```
-    * Generate Jobs controller.
-    * Add 'index' view with Submit Request form containing a Name field and URL field.
-    * Add Job model: request name (string), URLs (string array).  Unit test.
-    * Add 'create' method to create and store a job with associated URLs.  URLs are processed from an input string to a string array.
+    * Generate Screenshotreqs controller.
+    * Add 'new' view with Submit Request form containing a Name field and URL field.
+    * Add Screenshotreq model: request name (string), URLs (text).  Unit test.
+    * Add 'create' and 'new' methods to create and store a request with associated URLs.  URLs are processed from an input string to a string array.
 * Feature:<br>
   ```
   "As a user,
   In order to have the requested screen shots processed,
-  I want the screen shots generated as images and stored in the database along with the job name and URLs for later recall."
+  I want the screen shots generated as images and stored in the database along with the request name and URLs for later recall."
   ```
-    * Add new data association to Job model for generated images (bytea), generate migration for new DB column.
+    * Add new data association to Screenshotreq model for generated images (bytea), generate migration for new DB column.
     * Add screenshot gem of choice.
     * Add screenshot gem function to 'create' method to generate and store images from URL string array.
 * Feature:<br>
   ```
   "As a user,
   In order to see the result of a past request,
-  I want the screen shots generated as images and stored in the database along with the job name and URLs for later recall."
+  I want the screen shots generated as images and stored in the database along with the request name and URLs for later recall."
   ```
-    * Add Find Job form to 'index' view.
-    * Add 'show' method to show URLs and images and/or image file names from a given Job.
+    * Add Find request form to 'index' view.
+    * Add 'show' method to show URLs and images and/or image file names from a given request.
 
 **Additional Features Back End**
 * Feature: Message Queues
@@ -61,8 +61,8 @@ The design requirements include a back-end that could be run in a datacenter.  O
 **Additional Features Front End**
 * Feature: Input URLs
   * Add view with form that receives a string of delimited URLs
-* Feature: Show job
-  * Add view that receives a job query and returns URLs and screenshots
+* Feature: Show request
+  * Add view that receives a request query and returns URLs and screenshots
 
 ## Thoughts, Questions, Ideas, and Research
 Given my current experience and skills, I will be proceeding with Ruby on Rails.  Various ideas about technologies that are new to me, and development decisions I need to make, are listed below.
