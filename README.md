@@ -2,9 +2,9 @@
 
 ## Summary
 **Goal**<br>
-Build a screenshot as a service, _i.e._ a component/service for inputting as list of URLs and receiving one screenshot for each URL. 
+Build a screenshot as a service, _i.e._ a component/service for inputting a list of URLs and being able to view or receive the image of one screenshot of a webpage located by each URL. 
 
-Design includes as a back-end that could be run in a datacenter.  Optionally, the service could have a front end.  Optionally, the front end could receive the list of URLs through a form or an uploaded text file.  Optionally, the front end can display the screenshots.
+The design requirements include a back-end that could be run in a datacenter.  Optionally, the service could have a front end.  Optionally, the front end could receive the list of URLs through a form or an uploaded text file.  Optionally, the front end can display the screenshots.
 
 **Requirements**<br>
 1. Input: One or many (a list of) URLs for the component/service to screenshot.
@@ -30,29 +30,32 @@ Design includes as a back-end that could be run in a datacenter.  Optionally, th
   In order to submit a screen shot request,
   I want a to specify request name to identify the request, and URLs to specify the needed screenshots."
   ```
-    * Add Jobs controller: 'create' method to create a job with given URLs.
-    * Add Job model: request name (string), URLs (string array).
+    * Add Jobs controller.
+    * Add Job model: request name (string), URLs (string array).  Unit test.
+    * Add 'create' method to create and store a job with associated URLs.  URLs are processed from an input string to a string array.
 * Feature:<br>
   ```
   "As a user,
   In order to have the requested screen shots processed,
   I want the screen shots generated as images and stored in the database along with the job name and URLs for later recall."
   ```
-    * Add screenshot gem of choice.
     * Add new data association to Job model for generated images (bytea), generate migration for new DB column.
+    * Add screenshot gem of choice.
+    * Add screenshot gem function to 'create' method to generate and store images from URL string array.
 * Feature:<br>
   ```
   "As a user,
   In order to see the result of a past request,
   I want the screen shots generated as images and stored in the database along with the job name and URLs for later recall."
   ```
-    * Add method to 'show' URLs and images and/or image file names from a given Job.
+    * Add 'index' view in Jobs controller with a Find Job form.
+    * Add 'show' method to show URLs and images and/or image file names from a given Job.
 
 **Additional Features Back End**
 * Feature: Message Queues
   * Need to research about message queue problems and solutions.
 * Feature: Persistence
-  * Set a time
+  * Set a time that data in the DB will be erased after non-use.
 
 **Additional Features Front End**
 * Feature: Input URLs
@@ -61,7 +64,7 @@ Design includes as a back-end that could be run in a datacenter.  Optionally, th
   * Add view that receives a job query and returns URLs and screenshots
 
 ## Thoughts, Questions, Ideas, and Research
-Given my current experience and skills, I will be proceeding with Ruby and Rails.  Various ideas about technologies new to me, and development flow decisions, are listed below.
+Given my current experience and skills, I will be proceeding with Ruby on Rails.  Various ideas about technologies that are new to me, and development decisions I need to make, are listed below.
 
 **Screenshot**<br>
 An [article](https://redpanthers.co/screenshots-using-ruby/) from three years ago says that there are two Ruby gems based on `PhantomJS` called `Screencap`-[Github](https://github.com/maxwell/screencap) and `Webshot`-[Github](https://github.com/vitalie/webshot) that perform the basic functionality needed for the Screenshot Controller feature.  `Webshot` seems to be the more recent of the two and can configure the size of the captured screenshot.  `Grabzit`-[Ruby Gems](https://rubygems.org/gems/grabzit) is another option for Rails -- however, it might be more bulky than necessary for this particular app.  After a brief review of available gems searchable at [Ruby Gems](https://rubygems.org/), I have found that there doesn't seem to be much evolution of these types of APIs after 2016 which makes me think that progress in this type of technology has been taken into the private domain.
