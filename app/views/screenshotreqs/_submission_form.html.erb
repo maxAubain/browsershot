@@ -1,1 +1,18 @@
-<p>This is the submission form.<p>
+<p>This is the screen shot request submission form.<p>
+
+<%= form_with model: @screenshotreq, local: true do |form| %>
+
+<p>
+    <%= form.label :name, 'Name of Requestion' %><br>
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+    <%= form.label :urls, 'URL or URLs (separate multiple URLs with a semicolon ";")' %><br>
+    <%= form.text_area :urls %>
+  </p>
+  
+  <p>
+    <%= form.submit 'Submit Request'%>
+  </p>
+<% end %>

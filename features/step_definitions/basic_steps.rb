@@ -2,7 +2,7 @@ Given("that I visit the index page") do
   visit root_path
 end
 
-When("I fill {string} with {string}") do |name, field|
+When("I fill {string} with {string}") do |field, content|
   fill_in field, with: content
 end
 

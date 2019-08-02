@@ -7,5 +7,5 @@ Feature: User can submit request for screen shot
     Given that I visit the index page
     When I fill "Name" with "2019/08/02 submission"
     And I fill "URL" with "https://www.google.com"
-    And I click "Make Request"
+    And I click "Submit Request"
     Then I should see "Your request has been submitted."
