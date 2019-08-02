@@ -1,0 +1,2 @@
+class Screenshotreq < ApplicationRecord
+end
