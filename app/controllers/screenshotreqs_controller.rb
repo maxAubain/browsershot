@@ -43,7 +43,6 @@ class ScreenshotreqsController < ApplicationController
 
     @screenshotreq.screenshots.each do |screenshot|
       ws.capture screenshot.url, screenshot.img_path
-      binding.pry
     end
     
     flash[:notice] = 'The screenshots have been generated and saved.'
