@@ -12,9 +12,13 @@ This project is a proof-of-concept prototype.  Please see the flow diagrams belo
 
 ## Local Build
 If you want to build this project locally, fork it to your own Github repository and clone to a local workspace.  Please use the following installation instructions to install apps that are not already installed on your terminal.
-1. The latest version of Ruby v(xx) and Ruby on Rails v(xx) are used here.
+1. The latest version of Ruby 2.6.3 and Ruby on Rails 5.2.3 are used here.
 ```
+# install Ruby
+$ gem install ruby
 
+# install Ruby on Rails
+$ gem install rails -v 2.6.3
 ```
 2. Phantomjs & GraphicsMagick are required to enable the Webshot gem that is used for screenshot capture.
 ```
