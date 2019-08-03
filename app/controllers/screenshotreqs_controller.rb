@@ -14,7 +14,6 @@ class ScreenshotreqsController < ApplicationController
       # get_screenshots
 
       redirect_to root_path
-      flash[:notice] = 'Your request has been submitted.'
     end
   end
 
@@ -35,6 +34,7 @@ class ScreenshotreqsController < ApplicationController
       @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
     end
+    flash[:notice] = 'Your URLs have been parsed and assigned to screenshots.'
   end
 
   # def get_screenshots(screenshotreq)
