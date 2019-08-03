@@ -21,6 +21,10 @@ class ScreenshotreqsController < ApplicationController
     end
   end
 
+  def show
+    @screenshotreq = Screenshotreq.find(params[:id])
+  end
+
   private
 
   def screenshotreq_params
