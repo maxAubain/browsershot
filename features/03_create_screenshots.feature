@@ -9,4 +9,4 @@ Feature: User has screenshots generated from URLs
     And I fill "Name" with "2019/08/02 submission"
     And I fill "URL" with "https://www.google.com/; https://www.google.com/maps/"
     And I click "Submit Request"
-    Then I should see "The screenshots have been generated and saved."
+    Then I should see "Your URLs have been parsed and assigned to screenshots."

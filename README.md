@@ -56,7 +56,7 @@ GraphicsMagick
   ```
   "As a user,
   In order to see the result of a past request,
-  I want the screen shots generated as images and stored in the database along with the request name and URLs for later recall."
+  I want the generate screen shots and their corresponding URLs on a page."
   ```
     * Add Find request form to 'index' view.
     * Add 'show' method to show URLs and images and/or image file names from a given request.
