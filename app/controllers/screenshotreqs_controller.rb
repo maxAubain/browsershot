@@ -1,4 +1,8 @@
 class ScreenshotreqsController < ApplicationController
+  def index
+    @screenshotreqs = Screenshotreq.all
+  end
+  
   def new
     @screenshotreq = Screenshotreq.new
   end

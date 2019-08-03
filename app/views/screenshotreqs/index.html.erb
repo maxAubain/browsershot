@@ -1,1 +1,7 @@
-<%= link_to 'Screenshot Request', new_screenshotreq_path %>
+<%= link_to 'Make A Screenshot Request', new_screenshotreq_path %>
+<h2>Stored Request</h2>
+<% @screenshotreqs.each do |request| %>
+  <div>
+    <p><%= request.name %></p>
+  </div>
+<% end %>
