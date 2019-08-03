@@ -77,14 +77,23 @@ GraphicsMagick
 Given my current experience and skills, I will be proceeding with Ruby on Rails.  Various ideas about technologies that are new to me, and development decisions I need to make, are listed below.
 
 **Screenshot**<br>
+Day 1
 An [article](https://redpanthers.co/screenshots-using-ruby/) from three years ago says that there are two Ruby gems based on `PhantomJS` called `Screencap`-[Github](https://github.com/maxwell/screencap) and `Webshot`-[Github](https://github.com/vitalie/webshot) that perform the basic functionality needed for the Screenshot Controller feature.  `Webshot` seems to be the more recent of the two and can configure the size of the captured screenshot, a waiting period between captures, and overall seems to be designed with an overall application pipeline in mind.  `Grabzit`-[Ruby Gems](https://rubygems.org/gems/grabzit) is another option for Rails -- however, it might be more bulky than necessary for this particular app.  After a brief review of available gems searchable at [Ruby Gems](https://rubygems.org/), I have found that there doesn't seem to be much evolution of these types of APIs after 2016 which makes me think that progress in this type of technology has been taken into the private domain.
 
 Saving images in a DB is not trivial as each file can be hundreds to millions times larger than other common data types.  For example, storing the value of a Name as a _string_ is probably on the order of bytes, whereas hi-res images can easily be MB in size.  Storage capacity is not the only challenge.  DB query speed is also a concern with large files in web applications.  However, this is not a fundamentally new problem and many solutions exist.
 
 If one were to store image files at full resolution, _as is_ so to speak, one suitable DB data format is Binary Large OBject (blob).  Alternatively, a 'thumbnail' of an image can be stored as a Byte Array (bytea) and cached for quick retrieval.<sup>[1](https://stackoverflow.com/questions/54500/storing-images-in-postgresql)</sup>  In this application, a PostgreSQL DB is used because is compatible with the bytea data format<sup>[2](https://www.postgresql.org/docs/9.1/datatype-binary.html), [3](https://edgeguides.rubyonrails.org/active_record_postgresql.html)</sup>, so I will be trying this second option.
 
+Day 2
+After considering the question of where and how the screenshots will be stored further, I have decided that that it is more efficient (at this small scale) to store the generated image files in a “file system” configuration, i.e. a local folder.   When recalled later in a Screenshot Request query, the images can be reference by file name.  There seems to be little benefit in trying to store the images in the DB for now.  
+
+This does mean, however, that the relative image file paths must be stored somewhere.  This storage location will be a column associated with the Screenshot that stores a string per url containing the paths for a given request.
+
 **Parser**<br>
+Day 1
 May or may not need gems.  Need to experiment.
+Day 2
+Configured parser with a few lines of code.
 
 **Message Queues**<br>
 [Sidekiq?](https://sidekiq.org/products/pro.html)
