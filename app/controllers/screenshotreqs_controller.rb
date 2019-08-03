@@ -27,9 +27,7 @@ class ScreenshotreqsController < ApplicationController
     urls = []
     urls.push(@screenshotreq.urls.gsub(/\s+/, ""))
     urls_split = urls[0].split(";")
-    img_path = "image.png"
     counter = 0
-
     urls_split.each do |url|
       @screenshot = Screenshot.create(url: url, img_path: "./app/assets/images/" + @screenshotreq.id.to_s + "." + counter.to_s + ".png")
       @screenshot.screenshotreq = @screenshotreq
@@ -40,11 +38,9 @@ class ScreenshotreqsController < ApplicationController
 
   def create_screenshots
     ws = Webshot::Screenshot.instance
-
     @screenshotreq.screenshots.each do |screenshot|
       ws.capture screenshot.url, screenshot.img_path
     end
-    
     flash[:notice] = 'The screenshots have been generated and saved.'
   end
 end
