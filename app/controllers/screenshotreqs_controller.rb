@@ -32,9 +32,9 @@ class ScreenshotreqsController < ApplicationController
 
     urls_split.each do |url|
       @screenshot = Screenshot.create(url: url, img_path: img_path)
+      @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
     end
-    binding.pry
   end
 
   # def get_screenshots(screenshotreq)
