@@ -28,11 +28,13 @@ class ScreenshotreqsController < ApplicationController
     urls.push(@screenshotreq.urls.gsub(/\s+/, ""))
     urls_split = urls[0].split(";")
     img_path = "image.png"
+    counter = 0
 
     urls_split.each do |url|
-      @screenshot = Screenshot.create(url: url, img_path: img_path)
+      @screenshot = Screenshot.create(url: url, img_path: "./app/assets/images/" + @screenshotreq.id.to_s + "." + counter.to_s + ".png")
       @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
+      counter += 1
     end
   end
 
