@@ -37,7 +37,7 @@ class ScreenshotreqsController < ApplicationController
     urls_split = urls[0].split(";")
     counter = 1
     urls_split.each do |url|
-      @screenshot = Screenshot.create(url: url, img_path: "./app/assets/images/req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png")
+      @screenshot = Screenshot.create(url: url, img_path: "./app/assets/images/req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png", img_path_short: "req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png")
       @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
       counter += 1

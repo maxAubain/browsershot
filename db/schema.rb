@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_03_113400) do
     t.bigint "screenshotreq_id"
     t.string "url"
     t.string "img_path"
+    t.string "img_path_short"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["screenshotreq_id"], name: "index_screenshots_on_screenshotreq_id"

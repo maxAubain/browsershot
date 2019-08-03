@@ -1,9 +1,8 @@
 <h2>Request: <%= @screenshotreq.name %> </h2>
 <% @screenshotreq.screenshots.each do |screenshot| %>
-  <% img_path_short = "req" + @screenshotreq.id.to_s + "shot" + screenshot.id.to_s + ".png" %>
   <div>
     <p><%= screenshot.url %></p>
-    <%=image_tag img_path_short%>
+    <%=image_tag screenshot.img_path_short%>
   </div>
 <% end %>
 
