@@ -34,11 +34,13 @@ class ScreenshotreqsController < ApplicationController
       @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
     end
-    flash[:notice] = 'Your URLs have been parsed and assigned to screenshots.'
   end
 
-  # def get_screenshots(screenshotreq)
-  #   ws = Webshot::Screenshot.instance
-  #   ws.capture "http://www.google.com/", "google.png"
-  # end
+  def get_screenshots
+    ws = Webshot::Screenshot.instance
+
+      ws.capture "http://www.google.com/", "google.png"
+    
+    flash[:notice] = 'The screenshots have been generated and saved.'
+  end
 end
