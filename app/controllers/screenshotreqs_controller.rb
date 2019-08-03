@@ -11,7 +11,7 @@ class ScreenshotreqsController < ApplicationController
       parse_urls
       
       # capture and save screenshots
-      # get_screenshots
+      create_screenshots
 
       redirect_to root_path
     end
@@ -27,7 +27,7 @@ class ScreenshotreqsController < ApplicationController
     urls = []
     urls.push(@screenshotreq.urls.gsub(/\s+/, ""))
     urls_split = urls[0].split(";")
-    img_path = "temp"
+    img_path = "image.png"
 
     urls_split.each do |url|
       @screenshot = Screenshot.create(url: url, img_path: img_path)
@@ -36,10 +36,13 @@ class ScreenshotreqsController < ApplicationController
     end
   end
 
-  def get_screenshots
+  def create_screenshots
     ws = Webshot::Screenshot.instance
 
-      ws.capture "http://www.google.com/", "google.png"
+    @screenshotreq.screenshots.each do |screenshot|
+      ws.capture screenshot.url, screenshot.img_path
+      binding.pry
+    end
     
     flash[:notice] = 'The screenshots have been generated and saved.'
   end
