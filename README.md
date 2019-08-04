@@ -34,7 +34,7 @@ To build and run this project locally, fork it to your own Github repository and
 $ gem install ruby
 
 # install Ruby on Rails
-$ gem install rails -v 2.6.3
+$ gem install rails 
 ```
 2. Phantomjs & GraphicsMagick are required to enable the Webshot gem that is used for screenshot capture.
 ```
