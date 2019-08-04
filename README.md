@@ -6,9 +6,9 @@ This project was developed and documented by Max Aubain.  It took him pproximate
 ## Goal and Specifications
 Build a screenshot as a service, _i.e._ a component/service for inputting a list of URLs and being able to view or receive the image of one screenshot of a webpage located by each URL. The design requirements include a back-end that could be run in a datacenter.  
 
-This project is a proof-of-concept prototype.  Please see the flow diagrams below for the current configuration, and possibilities for scaling to production for 1,000,000 screenshot captures per day.
+This project is a proof-of-concept prototype described by the following flow diagram.
 
-
+<img src="./app/assets/images/proto_proc_flow.png">
 
 ## Local Build
 To build and run this project locally, fork it to your own Github repository and clone to a local workspace.  Please use the following installation instructions to install apps that are not already installed on your terminal.
