@@ -16,7 +16,7 @@ The `File System` in the prototype will need to be replaced with a cloud databas
 
 Analysis
 * 1,000,000 unique images requests generated per day
-* Average img size = 10 kb
+* Average img size = 100 kb
 * Averge persistence = 365 days
 * Total storage requirements = 36.5 TB
 * Cost @ [$0.0390 per GB for the first 50 TB](https://aws.amazon.com/govcloud-us/pricing/s3/) ~ $1400/month
