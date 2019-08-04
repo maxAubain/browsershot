@@ -10,6 +10,22 @@ This project is a proof-of-concept prototype described by the following flow dia
 
 <img src="./app/assets/images/proto_proc_flow.png">
 
+Implementing the flow at scale, for example to be configured to process 1,000,000 screenshot captures a day, will require changes to both the structure of the components and the flow.  While there are many excellent companies that provide a collection of nuanced services that can improve this one, I will be focusing on Amazon Web Services (AWS) solutions as they are convinient, well known, and configurable.
+
+The `File System` in the prototype will need to be replaced with a cloud database that can scale reliably.  Amazon's [Simple Storage Service (S3)](https://aws.amazon.com/s3/) is one such candidate.  Here, for example, image file object persistence can be managed by account type.  Free accounts can store images associated with a small number of screen shot requests, and stored for a limited time at low resolution in a cheaper storage tier.  For business accounts, for example with a business intelligence company that keeps track of the competitions' websites, images can be stored indefinitely with higher fidelity, to capture the entire height of a webpage, can be stored in a more expensive tier that will provide faster image GET requests.
+
+Analysis
+* 1,000,000 unique images requests generated per day
+* Average img size = 10 kb
+* Averge persistence = 365 days
+* Total storage requirements = 36.5 TB
+* Cost @ [$0.0390 per GB for the first 50 TB](https://aws.amazon.com/govcloud-us/pricing/s3/) ~ $1400/month
+
+
+The `Create screenshots method` computations in the prototype will need to be instead hosted by cloud servers.  In an early business model, starting with [AWS Lambda](https://aws.amazon.com/lambda/) for processing and [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) may be beneficial while the app is gaining popularity.  When image processing must be done at scale, then Lambda services can be replaced with [AWS EC2](https://aws.amazon.com/ec2/) scalable computing.
+
+Finally, the prototype is a serial application.  It can process one request at a time.  In practice, this means waiting for the screenshot captures to finish before submitting a new request.  At scale, we need to receive multiple requests from users that are tracked with a message queue that is directed to send the necessary information the image processing servers.  Given the AWS theme, [AWS Simple Queue Service](https://aws.amazon.com/sqs/) would suffice.
+
 ## Local Build
 To build and run this project locally, fork it to your own Github repository and clone to a local workspace.  Please use the following installation instructions to install apps that are not already installed on your terminal.
 1. The latest version of Ruby 2.6.3 and Ruby on Rails 5.2.3 are used here.
