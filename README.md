@@ -1,9 +1,9 @@
-# Full Stack Application: Capture and store website screenshots as a service
+# Full Stack Application: Capture, store, and retrieve website screenshots as a service
 
-## Executive Summary
-Approximately 25 hours over two and a half days.  This was a fun ride!
+# Executive Summary
+This project was developed and documented by Max Aubain.  It took him pproximately 25-30 hours over two and a half days.  This was a fun ride!
 
-**Goal**<br>
+## Goal and Specifications
 Build a screenshot as a service, _i.e._ a component/service for inputting a list of URLs and being able to view or receive the image of one screenshot of a webpage located by each URL. The design requirements include a back-end that could be run in a datacenter.  
 
 This project is a proof-of-concept prototype.  Please see the flow diagrams below for the current configuration, and possibilities for scaling to production for 1,000,000 screenshot captures per day.
@@ -11,7 +11,7 @@ This project is a proof-of-concept prototype.  Please see the flow diagrams belo
 
 
 ## Local Build
-If you want to build this project locally, fork it to your own Github repository and clone to a local workspace.  Don't forget to `bundle install` and `rails db:create db:migrate`.  Please use the following installation instructions to install apps that are not already installed on your terminal.
+To build and run this project locally, fork it to your own Github repository and clone to a local workspace.  Please use the following installation instructions to install apps that are not already installed on your terminal.
 1. The latest version of Ruby 2.6.3 and Ruby on Rails 5.2.3 are used here.
 ```
 # install Ruby
@@ -29,6 +29,16 @@ $ brew cask install phantomjs
 # install graphicsmagick on Mac OS with Homebrew
 $ brew install graphicsmagick
 ```
+3. After installation, don't forget to...
+```
+# complete installation of gems and instantiation of database
+$ bundle install
+$ rails db:create db:migrate
+
+# start local server to interact with app in browser window at 'localhost:3000'
+$ rails s
+```
+# Supporting Documentation
 ## Development Flow 
 The items listed here are the requirements for the prototype.
 
