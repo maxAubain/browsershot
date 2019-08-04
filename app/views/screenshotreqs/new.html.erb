@@ -8,7 +8,9 @@
   </p>
   
   <p>
-    <%= form.label :urls, 'URL or URLs (separate multiple URLs with a semicolon ";")' %><br>
+    A URL must be of the form "http" or "https" + "://www.website.com".  If you get an error when you submit the request, make sure you are spelling the website name correctly and using proper format.<br>
+    If submitting multiple URLs in a single request, they must be separated by a ";", such as "https://www.google.com; https://www.google.com/maps"<br><br>
+    <%= form.label :urls, 'URLs' %><br>
     <%= form.text_area :urls %>
   </p>
   
