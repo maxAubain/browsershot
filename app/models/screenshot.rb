@@ -7,5 +7,8 @@ class Screenshot < ApplicationRecord
   
   # Screenshots must belong to its assocaited screenshot request
   belongs_to :screenshotreq
+
+  # Each screenshot instance will have one associated screenshot image in Active Storage
+  has_one_attached :image
   
 end
