@@ -137,13 +137,6 @@ After considering the question of where and how the screenshots will be stored f
 
 This does mean, however, that the relative image file paths must be stored somewhere.  This storage location will be a column associated with the Screenshot that stores a string per url containing the paths for a given request.
 
-**Parser**<br>
-Day 1<br>
-May or may not need gems.  Need to experiment.
-
-Day 2<br>
-Configured parser with a few lines of code.
-
 **Message Queues**<br>
 [Sidekiq?](https://sidekiq.org/products/pro.html)
 
