@@ -1,0 +1,25 @@
+<%# View for screenshot request submission form.  
+
+Requires name of request and list of URLs, where in 
+the list URLs are separated by a semicolon. %>
+
+<p>This is the screen shot request submission form.<p>
+
+<%= form_with model: @screenshotreq, url: screenshotreqs_path, local: true do |form| %>
+
+<p>
+    <%= form.label :name, 'Name of Request' %><br>
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+    A URL must be of the form "http" or "https" + "://www.website.com".  If you get an error when you submit the request, make sure you are spelling the website name correctly and using proper format.<br>
+    If submitting multiple URLs in a single request, they must be separated by a ";", such as "https://www.google.com; https://www.google.com/maps"<br><br>
+    <%= form.label :urls, 'URLs' %><br>
+    <%= form.text_area :urls %>
+  </p>
+  
+  <p>
+    <%= form.submit 'Submit Request'%>
+  </p>
+<% end %>

@@ -1,0 +1,12 @@
+<%# View for the contents of a completed screenshot request.
+
+Includes each URL in the request paired with the taken screenshot. %>
+
+<h2>Request: <%= @screenshotreq.name %> </h2>
+<% @screenshotreq.screenshots.each do |screenshot| %>
+  <div>
+    <h4>Screenshot from <%= screenshot.url %></h4>
+    <%=image_tag screenshot.img_path_short%>
+  </div>
+<% end %>
+
