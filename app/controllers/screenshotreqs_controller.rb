@@ -94,7 +94,6 @@ class ScreenshotreqsController < ApplicationController
       ws.capture screenshot.url, screenshot.img_path, width: 1024, height: 768
       screenshot.image.attach(io: File.open(screenshot.img_path), filename: screenshot.img_path_short)
     end
-    binding.pry
     # use the ws.capture helper method for each screenshot for an associated screenshotreq,
     # at the specified URL, giving the image the img_path file name.
 
