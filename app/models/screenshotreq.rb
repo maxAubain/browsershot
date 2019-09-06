@@ -5,6 +5,7 @@ class Screenshotreq < ApplicationRecord
   validates :urls, presence: true
 
   # Each screenshot request will have at least one screenshot
-  has_many :screenshots
+  # When a screenshot request is deleted, it will deleted the associated screenshots
+  has_many :screenshots, dependent: :destroy
   
 end
