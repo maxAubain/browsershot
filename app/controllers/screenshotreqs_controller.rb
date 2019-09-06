@@ -71,13 +71,13 @@ class ScreenshotreqsController < ApplicationController
 
     counter = 1
     urls_split.each do |url|
-      @screenshot = Screenshot.create(url: url, img_path: "./app/assets/images/req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png", img_path_short: "req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png")
+      @screenshot = Screenshot.create(url: url, img_path: "./storage/req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png", img_path_short: "req" + @screenshotreq.id.to_s + "shot" + counter.to_s + ".png")
       @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
       counter += 1
     end
     # saves each individual URL from the list of URLs into separate Screenshot instances.
-    # url is the parameter used by the screenshot capture method to find the webpage to image,
+    # url is the parameter used by the screenshot capture method which determines the webpage to screenshot,
     # img_path is the location where the image file of the screenshot will be stored, and
     # img_path_short is the name of the image file.
 
@@ -92,6 +92,7 @@ class ScreenshotreqsController < ApplicationController
 
     @screenshotreq.screenshots.each do |screenshot|
       ws.capture screenshot.url, screenshot.img_path, width: 1024, height: 768
+      screenshot.image.attach(io: File.open(screenshot.img_path), filename: screenshot.img_path_short)
     end
     # use the ws.capture helper method for each screenshot for an associated screenshotreq,
     # at the specified URL, giving the image the img_path file name.
