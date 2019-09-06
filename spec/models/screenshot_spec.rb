@@ -19,4 +19,8 @@ RSpec.describe Screenshot, type: :model do
       expect(FactoryBot.create(:screenshot)).to be_valid
     end
   end
+
+  describe 'Associations' do
+    it { is_expected.to belong_to :screenshotreq}
+  end
 end
