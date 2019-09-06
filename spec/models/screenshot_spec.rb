@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Screenshot, type: :model do
+
   describe 'DB table' do
     it { is_expected.to have_db_column :url }
     it { is_expected.to have_db_column :img_path }
     it { is_expected.to have_db_column :img_path_short }
     it { is_expected.to have_db_column :screenshotreq_id }
+    it { is_expected.to have_db_index :screenshotreq_id }
   end
 
   describe 'Validations' do
@@ -23,4 +25,5 @@ RSpec.describe Screenshot, type: :model do
   describe 'Associations' do
     it { is_expected.to belong_to :screenshotreq}
   end
+  
 end

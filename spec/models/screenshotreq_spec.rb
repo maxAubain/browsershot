@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Screenshotreq, type: :model do
+
   describe 'DB table' do
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column :urls }
@@ -20,4 +21,5 @@ RSpec.describe Screenshotreq, type: :model do
   describe 'Associations' do
     it { is_expected.to have_many :screenshots }
   end
+  
 end
