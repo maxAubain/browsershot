@@ -51,7 +51,7 @@ class ScreenshotreqsController < ApplicationController
     redirect_to root_path
     # Redirect view to home page after delete
 
-    flash[:notice] = 'Screenshot request history has been deleted.'
+    flash[:notice] = 'Screenshot request has been deleted.'
   end
 
   private
