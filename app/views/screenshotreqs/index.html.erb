@@ -7,6 +7,6 @@
 <h3>Stored Requests</h3>
 <% @screenshotreqs.each do |screenshotreq| %>
   <div>
-    <p><%= screenshotreq.name %>. <%= link_to 'Show', screenshotreq_path(screenshotreq) %> 
+    <p><%= screenshotreq.name %>. <%= link_to 'Show', screenshotreq_path(screenshotreq) %> &nbsp; <%= link_to 'Delete', screenshotreq_path(screenshotreq), method: :delete%>
   </div>
 <% end %>

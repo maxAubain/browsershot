@@ -38,8 +38,17 @@ class ScreenshotreqsController < ApplicationController
     # Show method finds saved screenshotreq data and sends to a new view configured in show.html.erb.
   end
 
-  private
+  def destroy
+    @screenshotreq = Screenshotreq.find(params[:id])
+    @screenshotreq.destroy
+   
+    redirect_to root_path
+    # Redirect view to home page after delete
 
+    flash[:notice] = 'Screenshot request has been deleted.'
+  end
+
+  private
   # private methods arenot accessible from calls beyond this controller.
 
   def screenshotreq_params
@@ -83,10 +92,14 @@ class ScreenshotreqsController < ApplicationController
     @screenshotreq.screenshots.each do |screenshot|
       ws.capture screenshot.url, screenshot.img_path, width: 1024, height: 768
       screenshot.image.attach(io: File.open(screenshot.img_path), filename: screenshot.img_path_short)
+      # use the ws.capture helper method to capture each screenshot 
+      # associated with the screenshotreq instance. Inputs for the 
+      # capture include the screenshot URL and the image path where 
+      # the image will be saved. Finally, the new screenshot image is 
+      # associated with the screenshot instance using the .attach method
+      # native to Rails Active Storage.
     end
-    # use the ws.capture helper method for each screenshot for an associated screenshotreq,
-    # at the specified URL, giving the image the img_path file name.
 
-    flash[:notice] = 'The screenshots have been generated and saved.'
+    flash[:notice] = 'The screenshots have been caputured and saved.'
   end
 end

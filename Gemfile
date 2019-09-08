@@ -15,7 +15,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Screenshot capture
 gem 'webshot', '~> 0.1.1'
+
+# For future use to enable async methods regarding generation of screen shots
+# gem 'concurrent-ruby', '~> 1.1', '>= 1.1.5'
+
 
 group :development, :test do
   gem 'factory_bot_rails'
