@@ -78,16 +78,16 @@ class ScreenshotreqsController < ApplicationController
     urls_split.each do |url|
       image_path = "./storage/req#{@screenshotreq.id}shot#{counter}.png"
       image_file_name = "req#{@screenshotreq.id}shot#{counter}.png"
-      @screenshot = Screenshot.create(url: url, img_path: image_path, img_path_short: image_file_name)
+      @screenshot = Screenshot.create(url: url, image_file_path: image_path, image_file_name: image_file_name)
       @screenshot.screenshotreq = @screenshotreq
       @screenshot.save!
       counter += 1
     end
     # saves each individual URL from the list of URLs into separate 
     # Screenshot instances. Url is the parameter used by the screenshot 
-    # capture method which determines the webpage to screenshot, img_path 
+    # capture method which determines the webpage to screenshot, image_file_path 
     # is the location where the image file of the screenshot will be stored, and
-    # img_path_short is the name of the image file.
+    # image_file_name is the name of the image file.
   end
 
   def create_screenshots
@@ -98,8 +98,8 @@ class ScreenshotreqsController < ApplicationController
     # Instantiate an instance of Webshot.
 
     @screenshotreq.screenshots.each do |screenshot|
-      ws.capture screenshot.url, screenshot.img_path, width: 1024, height: 768
-      screenshot.image.attach(io: File.open(screenshot.img_path), filename: screenshot.img_path_short)
+      ws.capture screenshot.url, screenshot.image_file_path, width: 1024, height: 768
+      screenshot.image.attach(io: File.open(screenshot.image_file_path), filename: screenshot.image_file_name)
       # Use the ws.capture helper method to capture each screenshot 
       # associated with the screenshotreq instance. Inputs for the 
       # capture include the screenshot URL and the image path where 

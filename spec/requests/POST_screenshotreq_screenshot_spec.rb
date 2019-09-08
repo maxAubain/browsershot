@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Frontend", type: :request do
+RSpec.describe "Screenshotreq", type: :request do
   # Request specs that primarily test the screenshotreq controller.
 
-  describe 'can work frontend to backend by' do
+  describe 'can save by POST request' do
     # Testing front to back screenshotreq data flow pattern.
 
     let(:screenshotreq_name){ "test_req" }
@@ -20,13 +20,13 @@ RSpec.describe "Frontend", type: :request do
     end
     # Save a screenshotreq with POST to 'screenshotreqs#create' controller action.
 
-    it 'saving screenshotreq, has one url' do
+    it 'saved screenshotreq with one url is verified' do
       screenshotreq_saved = Screenshotreq.find_by(name: screenshotreq_name)
       expect(screenshotreq_saved.name).to eq(screenshotreq.name)
     end
     # Compare saved screenshotreq name to stubbed form screenshotreq name.
 
-    it 'and saving associated screenshot' do
+    it 'saved associated screenshot is verified' do
       screenshotreq_saved = Screenshotreq.find_by(name: screenshotreq_name)
       screenshot_saved = Screenshot.find_by(url: screenshotreq_urls)
       expect(screenshot_saved.screenshotreq_id).to eq(screenshotreq_saved.id)
@@ -34,17 +34,16 @@ RSpec.describe "Frontend", type: :request do
     # Confirm that screenshot is saved with screenshotreq and
     # association between screenshotreq and screenshot is made.
 
-    it 'and saving the screenshot image association' do
+    it 'saved screenshot image association is verified' do
       screenshot_saved = Screenshot.find_by(url: screenshotreq_urls)
       expect(screenshot_saved.id).to eq(screenshot_saved.image.record.id)
     end
     # Confirm assocation between screenshot to image using image record id.
 
-    it 'and saving the screenshot image' do
+    it 'saved screenshot image is verified' do
       screenshot_saved = Screenshot.find_by(url: screenshotreq_urls)
-      file_exist = File.exist?(screenshot_saved.img_path)
-      file_type = File.ftype(screenshot_saved.img_path)
-      binding.pry
+      file_exist = File.exist?(screenshot_saved.image_file_path)
+      file_type = File.ftype(screenshot_saved.image_file_path)
       expect(file_exist).to eq(true)
       expect(file_type).to eq("file")
     end
