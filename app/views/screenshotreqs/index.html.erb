@@ -1,12 +1,12 @@
-<%# View for home page.  
+<%# View for home page. %>
 
-Includes list of previous requests, each with a link 
-to see request URLs and screenshot images %>
-
+<hr>
 <h4> <%= link_to 'Make A Screenshot Request', new_screenshotreq_path %> </h4>
+
+<hr>
 <h3>Stored Requests</h3>
-<% @screenshotreqs.each do |request| %>
+<% @screenshotreqs.each do |screenshotreq| %>
   <div>
-    <p><%= request.name %>. <%= link_to 'Show', screenshotreq_path(request) %> 
+    <p><%= screenshotreq.name %>. <%= link_to 'Show', screenshotreq_path(screenshotreq) %> 
   </div>
 <% end %>
