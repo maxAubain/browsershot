@@ -1,20 +1,27 @@
-<%# View for screenshot request submission form.  
+<%# View for screenshot request submission form. %>
 
-Requires name of request and list of URLs, where in 
-the list URLs are separated by a semicolon. %>
-
-<p>This is the screen shot request submission form.<p>
+<hr>
+<h2>Make a screenshot request</h2>
 
 <%= form_with model: @screenshotreq, url: screenshotreqs_path, local: true do |form| %>
-
-<p>
-    <%= form.label :name, 'Name of Request' %><br>
+  <hr>
+  <p>
+    <%= form.label :name, 'Request ID' %><br>
     <%= form.text_field :name %>
   </p>
   
+  <h4>How to specify URLs</h4>
+
   <p>
-    A URL must be of the form "http" or "https" + "://www.website.com".  If you get an error when you submit the request, make sure you are spelling the website name correctly and using proper format.<br>
-    If submitting multiple URLs in a single request, they must be separated by a ";", such as "https://www.google.com; https://www.google.com/maps"<br><br>
+    1) A URL must be of the form "http" or "https" + "://www.website.com".
+  </p>
+  <p>
+    2) Multiple URLs can be used in a single request.  They must be separated by a ";", such as "https://www.google.com; https://www.google.com/maps".
+  </p>
+  <p>
+    3) If you get an error when you submit the request, make sure you are spelling the website name correctly and using proper format.
+  </p>
+  <p>
     <%= form.label :urls, 'URLs' %><br>
     <%= form.text_area :urls %>
   </p>
@@ -22,4 +29,5 @@ the list URLs are separated by a semicolon. %>
   <p>
     <%= form.submit 'Submit Request'%>
   </p>
+
 <% end %>
