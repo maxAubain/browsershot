@@ -10,25 +10,23 @@ RSpec.describe "Show view", type: :request do
     # Create non-saved instance of screenshotreq, stubbing out the new.html.erb form.
     
     before do
-      params = {
+      params_post = {
         name: screenshotreq_name,
         urls: screenshotreq_urls
       }
-      post('/screenshotreqs', params: {screenshotreq: params})
-    end
-    # Save a screenshotreq with POST to 'screenshotreqs#create' controller action.
+      post('/screenshotreqs', params: {screenshotreq: params_post})
+      # Save a screenshotreq with POST to 'screenshotreqs#create' controller action.
 
-    before(:each) do
       screenshotreq_id = Screenshotreq.find_by(name: screenshotreq_name).id
       path = "/screenshotreqs/#{screenshotreq_id}"
-      params = {
+      params_get = {
         id: screenshotreq_id
       }
-      get(path, params: {screenshotreq: params})
+      get(path, params: {screenshotreq: params_get})
+      # GET saved screenshotreq.
     end
-    # GET saved screenshotreq before each test.
     
-    describe '' do
+    describe do
       it '200 response and screenshotreq name is verified' do
         expect(response).to be_successful
         expect(response.body).to include(screenshotreq_name)
