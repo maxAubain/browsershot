@@ -18,7 +18,7 @@ RSpec.describe "Show view", type: :request do
       # Save a screenshotreq with POST to 'screenshotreqs#create' controller action.
 
       screenshotreq_id = Screenshotreq.find_by(name: screenshotreq_name).id
-      path = "/screenshotreqs/#{screenshotreq_id}"
+      path = "/screenshotreqs/#{screenshotreq_id}" # URI pattern for screenshotreqs#show
       params_get = {
         id: screenshotreq_id
       }
@@ -31,19 +31,19 @@ RSpec.describe "Show view", type: :request do
         expect(response).to be_successful
         expect(response.body).to include(screenshotreq_name)
       end
-      # Check success and body of GET request for saved screenshotreq.
+      # Check GET request response status and body.
 
       it 'screenshot url is verified' do
         screenshot = Screenshot.find_by(url: screenshotreq_urls)
         expect(response.body).to include(screenshot.url)
       end
-      # Check body of GET request for saved screenshot url.
+      # Check GET request response body for saved screenshot url.
 
       it 'screenshot image is verified' do
         screenshot = Screenshot.find_by(url: screenshotreq_urls)
         expect(response.body).to include(screenshot.image_file_name)
       end
-      # Check body of GET request for saved screenshot image reference.
+      # Check GET request response body for saved screenshot image reference.
 
     end
   end
