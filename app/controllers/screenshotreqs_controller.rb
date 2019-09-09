@@ -53,7 +53,7 @@ class ScreenshotreqsController < ApplicationController
   end
 
   private
-  # private methods arenot accessible from calls beyond this 
+  # private methods are not accessible from calls beyond this 
   # controller.
 
   def screenshotreq_params
