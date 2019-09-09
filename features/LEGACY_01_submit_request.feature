@@ -9,4 +9,5 @@ Feature: User can submit request for screen shot
     And I fill "Name" with "2019/08/02 submission"
     And I fill "URL" with "https://www.google.com/; https://www.google.com/maps/"
     And I click "Submit Request"
-    Then I should see "Your request has been submitted."
+    And that I visit the index page
+    Then I should see "Successful."

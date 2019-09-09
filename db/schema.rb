@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 2019_09_05_133909) do
   create_table "screenshots", force: :cascade do |t|
     t.bigint "screenshotreq_id"
     t.string "url"
-    t.string "img_path"
-    t.string "img_path_short"
+    t.string "image_file_path"
+    t.string "image_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["screenshotreq_id"], name: "index_screenshots_on_screenshotreq_id"

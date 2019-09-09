@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :screenshot do
     url { "https://www.google.com/" }
-    img_path { "./app/assets/images/img.png" }
-    img_path_short { "img.png"}
-    screenshotreq
+    image_file_path { "./storage/img.png" }
+    image_file_name { "img.png"}
+    screenshotreq # Generates associated screenshotreq.
   end
 end

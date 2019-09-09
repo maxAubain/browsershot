@@ -139,8 +139,3 @@ This does mean, however, that the relative image file paths must be stored somew
 
 **Message Queues**<br>
 [Sidekiq?](https://sidekiq.org/products/pro.html)
-
-
-
-
-
