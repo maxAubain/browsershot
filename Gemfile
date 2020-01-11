@@ -14,12 +14,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# Screenshot capture
-#old
-gem 'webshot', '~> 0.1.1'
-#new
+# Screenshot capture and image conditioning
 gem 'ruby_webshot', '~> 0.0.6'
+gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
 gem 'webdrivers', '~> 4.2'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
 # For future use to enable async methods regarding generation of screen shots
 # gem 'concurrent-ruby', '~> 1.1', '>= 1.1.5'
