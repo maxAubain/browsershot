@@ -1,5 +1,3 @@
-<%# View for the URLs and images of a screenshot request. %>
-
 <hr>
 <h2>Stored request: <%= @screenshotreq.name %> </h2>
 
@@ -7,10 +5,8 @@
 <% @screenshotreq.screenshots.each do |screenshot| %>
   <div>
     <h4>Screenshot from <%= screenshot.url %></h4>
-    <%=image_tag screenshot.image%>
+    <%=image_tag screenshot.image.variant(resize: "512x384")%>
   </div>
   <hr>
 <% end %>
-<%# Show a list of each captured screenshot with corresponding URL
-associated with the screenshotreq. %>
-
+<%# Show a list of screenshot URLs with associated images %>
