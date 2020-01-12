@@ -1,14 +1,12 @@
 class Screenshot < ApplicationRecord
-  
-  # Validations for each screenshot: URL, image path target
   validates :url, presence: true
   validates :image_file_path, presence: true
   validates :image_file_name, presence: true
-  
-  # Screenshots must belong to its assocaited screenshot request
-  belongs_to :screenshotreq
+  # Validate screenshot parameters: URL, image path, image name
 
-  # Each screenshot instance will have one associated screenshot image in Active Storage
+  belongs_to :screenshotreq
+  # Associate Screenshots to one Screenshotreq
+
   has_one_attached :image
-  
+  # Associate screenshot image stored in Active Storage with Screenshot
 end
