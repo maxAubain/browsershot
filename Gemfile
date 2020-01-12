@@ -20,6 +20,9 @@ gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
 gem 'webdrivers', '~> 4.2'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
+# SASS stylesheets
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+
 # For future use to enable async methods regarding generation of screen shots
 # gem 'concurrent-ruby', '~> 1.1', '>= 1.1.5'
 
