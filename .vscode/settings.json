@@ -1,3 +1,6 @@
 {
-  "editor.defaultFormatter": "misogi.ruby-rubocop"
+  "editor.defaultFormatter": "misogi.ruby-rubocop",
+  "[scss]": {
+    "editor.defaultFormatter": "michelemelluso.code-beautifier"
+  }
 }

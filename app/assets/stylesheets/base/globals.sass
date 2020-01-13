@@ -1,0 +1,98 @@
+$turquoise: #ccffff 
+
+@media only screen and (max-width: 875px)
+  .content
+    display: none
+  .mobile
+    position: absolute
+    padding: 40vh 20px 0 20px
+    color: $turquoise
+    font-size: 25px
+
+@media only screen and (min-width: 875px)
+  .mobile
+    display: none
+
+a 
+  text-decoration: none
+  color: white
+  &:hover
+    color: $turquoise 
+  
+.background
+  position: fixed
+  background-image: url("background.png")
+  background-position: center
+  background-size: cover
+  height: 100vh
+  width: 100vw
+  -webkit-filter: grayscale(100%) blur(3px) brightness(50%)
+  filter: grayscale(100%) blur(3px) brightness(50%)
+
+body
+  margin: 0
+  height: 100vh
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+
+.button
+  display: flex
+  justify-content: center
+  align-items: center
+
+.button-text
+  border: 2px solid white
+  border-radius: 5px
+  background-color: rgba(32,32,32,.6) 
+  color: #ccffff 
+  font-size: 25px
+  padding: 10px 20px 10px 20px
+  &:hover
+    color: #ccffff 
+    background-color: black
+    border: 2px solid $turquoise 
+
+.content
+  position: absolute
+  padding: 20px
+  top: 15vh
+  left: 30vw
+  width: 40vw
+
+.copyright
+  position: fixed
+  color: rgba(204,255,255,.2)
+  top: 93vh
+  left: 10px
+
+.navigation
+  position: absolute
+  padding: 20px
+  top: 10vh
+  left: 30vw
+  width: 40vw
+  text-align: right
+
+.notice
+  position: absolute
+  padding: 20px
+  left: 30vw
+  width: 40vw
+  color: $turquoise 
+
+p 
+  color: white
+
+.sub-sub-title
+  padding: 10px 0 10px 0
+  font-size: 15px
+  color: $turquoise 
+
+.sub-title
+  padding: 10px 0 10px 0
+  font-size: 25px
+  color: white
+
+.title
+  padding: 10px 0 10px 0
+  font-size: 50px
+  color: $turquoise 
