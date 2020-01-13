@@ -92,6 +92,6 @@ class ScreenshotreqsController < ApplicationController
       # Associate captured image file with screenshot instance.
     end
 
-    flash[:notice] = 'Browsershot request has been executed and saved.'
+    flash[:notice] = 'Browsershot request has been executed and saved.  Check Storage for results.'
   end
 end
