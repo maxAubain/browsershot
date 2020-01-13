@@ -1,11 +1,8 @@
 class Screenshotreq < ApplicationRecord
-  
-  # Validations for each screenshot request: request name and list of at least one URL
   validates :name, presence: true
   validates :urls, presence: true
+  # Validate screenshotreq parameters: name, urls.
 
-  # Each screenshot request will have at least one screenshot
-  # When a screenshot request is deleted, it will deleted the associated screenshots
   has_many :screenshots, dependent: :destroy
-  
+  # Associate and screenshots with screenshotreq / DELETE associated screenshots with screensshotreq DELETE.
 end

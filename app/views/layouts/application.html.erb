@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DTCScreenshot</title>
+    <title>Browsershot</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= notice || alert %><br>
-    <%= yield %>
+    <div class="background">
+    </div>
+    <div class="copyright">
+      Photography and Design <br> &copy; 2020 Max Aubain all rights reserved
+    </div>
+    <div class="mobile">
+      Browsershot is not currently available for mobile and tablet.
+    </div>
+    <div class="notice">
+      <%= notice || alert %>
+    </div>
+    <div class="navigation">
+      <% if !current_page?(root_path)%> 
+        <%= link_to 'Home', root_path %> 
+      <% else %>
+        <%= link_to 'Visit Max', 'https://www.maxaubain.com'%>
+      <% end %> 
+    </div>
+    <div class="content">
+      <div class="title">
+        Browsershot
+      </div>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
