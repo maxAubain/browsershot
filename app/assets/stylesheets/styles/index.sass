@@ -1,0 +1,30 @@
+.button-container.index
+  display: flex
+  flex-direction: right
+  justify-content: space-evenly
+  margin: 10px 0 0 0
+
+.dropdown
+  position: relative
+  display: inline-block
+
+.dropdown-content
+  display: none
+  position: absolute
+  background-color: rgba(32,32,32,.6) 
+  min-width: 160px
+  z-index: 1
+
+.dropdown-content a 
+  color: white
+  padding: 20px 0 10px 20px
+  text-decoration: none
+  display: block
+
+.dropdown-content a:hover 
+  background-color: black
+  color: #ccffff 
+
+.dropdown:hover 
+  .dropdown-content 
+    display: block

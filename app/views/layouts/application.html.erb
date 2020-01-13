@@ -4,16 +4,28 @@
     <title>Browsershot</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="background"></div>
-      <div class="content">
-        <%= notice || alert %><br>
+    <div class="background">
+    </div>
+    <div class="notice">
+      <%= notice || alert %>
+    </div>
+    <div class="navigation">
+      <% if !current_page?(root_path)%> 
+        <%= link_to 'Home', root_path %> 
+      <% end %> 
+    </div>
+    <div class="content">
+      <div class="title">
+        Browsershot
+      </div>
+      <div>
         <%= yield %>
       </div>
+    </div>
   </body>
 </html>

@@ -1,17 +1,86 @@
-body
-  margin: 0
+a 
+  text-decoration: none
   color: white
-
-
+  &:hover
+    color: #ccffff 
+  
 .background
-  background: url("background.png")
+  position: fixed
+  background-image: url("background.png")
+  background-position: center
   background-size: cover
   height: 100vh
-  -webkit-filter: grayscale(100%) blur(3px)
-  filter: grayscale(100%) blur(3px)
+  width: 100vw
+  -webkit-filter: grayscale(100%) blur(3px) brightness(50%)
+  filter: grayscale(100%) blur(3px) brightness(50%)
 
+body
+  margin: 0
+  height: 100vh
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+
+.button
+  display: flex
+  justify-content: center
+  align-items: center
+
+.button-text
+  border: 2px solid white
+  border-radius: 5px
+  background-color: rgba(32,32,32,.6) 
+  color: #ccffff 
+  font-size: 25px
+  padding: 10px 20px 10px 20px
+  &:hover
+    color: #ccffff 
+    background-color: black
+    border: 2px solid #ccffff 
 
 .content
   position: absolute
-  top: 0px
-  left: 0px
+  padding: 20px
+  top: 15vh
+  left: 30vw
+  width: 40vw
+
+.form
+  border: 2px solid white
+  border-radius: 5px
+  background-color: rgba(32,32,32,.6) 
+  padding: 10px
+
+.navigation
+  position: absolute
+  padding: 20px
+  top: 10vh
+  left: 30vw
+  width: 40vw
+  color: #ccffff 
+  text-align: right
+
+.notice
+  position: absolute
+  padding: 20px
+  left: 30vw
+  width: 40vw
+  color: #ccffff 
+
+p 
+  color: white
+
+.sub-sub-title
+  padding: 10px 0 10px 0
+  font-size: 15px
+  color: #ccffff
+
+.sub-title
+  padding: 10px 0 10px 0
+  font-size: 25px
+  color: white
+
+.title
+  padding: 10px 0 10px 0
+  font-size: 50px
+  color: #ccffff
+
+   

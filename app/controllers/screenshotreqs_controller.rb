@@ -40,7 +40,7 @@ class ScreenshotreqsController < ApplicationController
 
     redirect_to root_path
 
-    flash[:notice] = 'Screenshot request has been deleted.'
+    flash[:notice] = 'Browsershot result has been deleted.'
   end
 
   private
@@ -92,6 +92,6 @@ class ScreenshotreqsController < ApplicationController
       # Associate captured image file with screenshot instance.
     end
 
-    flash[:notice] = 'Screenshots have been captured and saved.'
+    flash[:notice] = 'Browsershot request has been executed and saved.'
   end
 end

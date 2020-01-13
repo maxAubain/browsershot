@@ -1,12 +1,17 @@
-<hr>
-<h2>Stored request: <%= @screenshotreq.name %> </h2>
+<div class="sub-title">
+  Results  
+  <div class="request-tag">
+    Request by <%= @screenshotreq.name %>
+  </div>
+  <div class="delete-button">
+    <%= link_to 'Delete', screenshotreq_path(@screenshotreq), method: :delete, class: "button-text"%>
+  </div>
+</div>
 
-<hr>
 <% @screenshotreq.screenshots.each do |screenshot| %>
   <div>
-    <h4>Screenshot from <%= screenshot.url %></h4>
+    <p><%= screenshot.url %></p>
     <%=image_tag screenshot.image.variant(resize: "512x384")%>
   </div>
-  <hr>
+  
 <% end %>
-<%# Show a list of screenshot URLs with associated images %>

@@ -1,13 +1,18 @@
-<h2>Screenshot</h2>
-<p>Software as a Service: Capture and store screenshot images at URLs of your choosing.</p>
+<div class="sub-title">
+  Capture and store website screenshots
+</div>
 
-<h4> <%= link_to 'Make A Screenshot Request', new_screenshotreq_path %> </h4>
-<%# Link for new screenshot request page. %>
-
-<h3>Stored Requests</h3>
-<% @screenshotreqs.each do |screenshotreq| %>
-  <div>
-    <p><%= screenshotreq.name %>. <%= link_to 'Show', screenshotreq_path(screenshotreq) %> &nbsp; <%= link_to 'Delete', screenshotreq_path(screenshotreq), method: :delete%>
+<div class="button-container index">
+  <div class="button index">
+    <%= link_to 'New Request', new_screenshotreq_path, class: "button-text" %>
   </div>
-<% end %>
-<%# Show a history of all screenshotreqs with options to view and delete. %>
+
+  <div class="dropdown">
+    <button class="button-text">Storage</button>
+    <div class="dropdown-content">
+      <% @screenshotreqs.each do |screenshotreq| %>
+        <%= link_to screenshotreq.name, screenshotreq_path(screenshotreq) %> &nbsp; 
+      <% end %>
+    </div>
+  </div> 
+</div>
