@@ -28,9 +28,11 @@ a
   width: 100vw
   -webkit-filter: grayscale(100%) blur(3px) brightness(50%)
   filter: grayscale(100%) blur(3px) brightness(50%)
+  transform: scale(1.1) /* removes grayish border from blur effect */
 
-body
+html, body
   margin: 0
+  padding: 0
   height: 100vh
   font-family: "Trebuchet MS", Helvetica, sans-serif
 
@@ -55,8 +57,8 @@ body
   position: absolute
   padding: 20px
   top: 15vh
-  left: 30vw
-  width: 40vw
+  left: 25vw
+  width: 50vw
 
 .copyright
   position: fixed
@@ -68,15 +70,15 @@ body
   position: absolute
   padding: 20px
   top: 10vh
-  left: 30vw
-  width: 40vw
+  left: 25vw
+  width: 50vw
   text-align: right
 
 .notice
   position: absolute
   padding: 20px
-  left: 30vw
-  width: 40vw
+  left: 25vw
+  width: 50vw
   color: $turquoise 
 
 p 
@@ -88,7 +90,7 @@ p
   color: $turquoise 
 
 .sub-title
-  padding: 10px 0 10px 0
+  padding: 10px 0 10px 20px
   font-size: 25px
   color: white
 
