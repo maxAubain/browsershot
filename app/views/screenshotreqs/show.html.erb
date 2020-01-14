@@ -1,9 +1,11 @@
 <div class="sub-title">
   Results  
+</div>
+<div class="request-container">
   <div class="request-tag">
     Request by <%= @screenshotreq.name %>
   </div>
-  <div class="delete-button">
+  <div>
     <%= link_to 'Delete', screenshotreq_path(@screenshotreq), method: :delete, class: "button-text"%>
   </div>
 </div>
@@ -11,7 +13,6 @@
 <% @screenshotreq.screenshots.each do |screenshot| %>
   <div>
     <p><%= screenshot.url %></p>
-    <%=image_tag screenshot.image.variant(resize: "512x384")%>
+    <%=image_tag screenshot.image, class: "images"%>
   </div>
-  
 <% end %>

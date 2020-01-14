@@ -2,24 +2,26 @@
   Define request
 </div>
 
-<div class="form">
-  <%= form_with model: @screenshotreq, 
-                url: screenshotreqs_path, 
-                local: true do |form| %>
-    <%= form.label :name, 'Username', 
-                    class: "sub-sub-title" %>
-    <br>
-    <%= form.text_field :name,
-                        class: "textfield-new",
-                        placeholder: "e.g. BrowsershotUser1" %>
-    <br><br>
-    <%= form.label :urls, 'Websites to screenshot', 
-                    class: "sub-sub-title" %>
-    <br>
-    <%= form.text_area :urls, 
-                        class: "textarea-new",
-                        placeholder: "e.g. https://www.google.com/; https://www.google.com/maps/" %>
-    <br><br>
-    <%= form.submit 'Submit', class: "button-text"%>
-  <% end %>
+<div class="form-container">
+  <div class="form">
+    <%= form_with model: @screenshotreq, 
+                  url: screenshotreqs_path, 
+                  local: true do |form| %>
+      <%= form.label :name, 'Username', 
+                      class: "sub-sub-title" %>
+      <br>
+      <%= form.text_field :name,
+                          class: "textfield-new",
+                          placeholder: "e.g. BrowsershotUser1" %>
+      <br><br>
+      <%= form.label :urls, 'Websites to screenshot', 
+                      class: "sub-sub-title" %>
+      <br>
+      <%= form.text_area :urls, 
+                          class: "textarea-new",
+                          placeholder: "e.g. https://www.google.com/; https://www.google.com/maps/" %>
+      <br><br>
+      <%= form.submit 'Submit', class: "button-text"%>
+    <% end %>
+  </div>
 </div>

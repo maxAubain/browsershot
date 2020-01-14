@@ -84,7 +84,7 @@ class ScreenshotreqsController < ApplicationController
       RubyWebshot.call(screenshot.url,
                        save_file_path: screenshot.image_file_path, 
                        file_name: screenshot.image_file_name, 
-                       width: 1024, 
+                       width: 1366, 
                        height: 768)
 
       screenshot.image.attach(io: File.open("#{screenshot.image_file_path}/#{screenshot.image_file_name}"),

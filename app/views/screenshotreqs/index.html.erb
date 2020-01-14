@@ -8,7 +8,9 @@
   </div>
 
   <div class="dropdown">
-    <button class="button-text">Storage</button>
+    <button class="button-text">
+      Storage
+    </button>
     <div class="dropdown-content">
       <% @screenshotreqs.each do |screenshotreq| %>
         <%= link_to screenshotreq.name, screenshotreq_path(screenshotreq) %> &nbsp; 
