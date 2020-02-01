@@ -94,4 +94,8 @@ class ScreenshotreqsController < ApplicationController
 
     flash[:notice] = 'Browsershot request has been executed and saved.  Check Storage for results.'
   end
+
+  def error_catch
+    # method placeholder
+  end
 end
